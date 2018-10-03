@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.2)
+  - FLAnimatedImage (1.0.12)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - FLAnimatedImage (~> 1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - FLAnimatedImage
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+
+PODFILE CHECKSUM: 566b806d8f9118529aaeca7224a4983956a8e5a9
+
+COCOAPODS: 1.5.3
