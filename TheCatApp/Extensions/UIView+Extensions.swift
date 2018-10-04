@@ -9,8 +9,17 @@
 import Foundation
 import UIKit
 
+
+//MARK: Static funcs
 extension UIView {
     static func loadNibNamed(_ name:String, forOwner: Any?) -> UIView? {
         return Bundle.main.loadNibNamed(name, owner: forOwner, options: nil)?.first as? UIView
+    }
+    
+    static func animateBy(timing:CAMediaTimingFunction, duration:Double, animations:@escaping () -> Void, completion:((Bool) -> ())? = nil) {
+        CATransaction.begin()
+        CATransaction.setAnimationTimingFunction(timing)
+        UIView.animate(withDuration: duration, animations: animations, completion: completion)
+        CATransaction.commit()
     }
 }

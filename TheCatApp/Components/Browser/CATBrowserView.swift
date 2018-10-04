@@ -8,11 +8,14 @@
 
 import UIKit
 
+@objc protocol CATBrowserRefreshProtocol : class {
+    func refreshed()
+}
 class CATBrowserView: CATNibableView {
     static let nibName : String = "CATBrowserView"
 
-
-    
+    let refreshControl = UIRefreshControl()
+    weak var refrehDelegate : CATBrowserRefreshProtocol?
     @IBOutlet weak var imagesCollection: UICollectionView!
     
     
@@ -29,6 +32,8 @@ class CATBrowserView: CATNibableView {
     }
     
     private func customInit() {
+        refreshControl.addTarget(self, action: #selector(onPullRefreshed(sender:)), for: .valueChanged)
+        imagesCollection.refreshControl = refreshControl
         imagesCollection.register(UINib(nibName: CATBaseCollectionCellCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: CATBaseCollectionCellCollectionViewCell.reuseIdentifier)
         
     }
@@ -56,5 +61,9 @@ class CATBrowserView: CATNibableView {
     }
     func insert(indexes:[IndexPath]) {
         imagesCollection.insertItems(at: indexes)
+    }
+    
+    @objc func onPullRefreshed(sender:Any?) {
+        refrehDelegate?.refreshed()
     }
 }

@@ -39,7 +39,7 @@ class CATHTTPClient : NSObject {
         return p
     }
     
-    static func urlBuilder(route:String, parameters : [String: Any]?) -> URL? {
+    static func urlBuilder(route:String, parameters : [String: Any]?) -> URLRequest? {
         var comp = URLComponents()
         comp.scheme = HTTP_BASE_SCHEME
         comp.host = HTTP_BASE_HOST
@@ -56,7 +56,7 @@ class CATHTTPClient : NSObject {
             comp.queryItems = queryItems
         }
         if let u = try? comp.asURL() {
-            return u
+            return URLRequest(url: u, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
         }
         return nil
     }

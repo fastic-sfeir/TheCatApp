@@ -1,5 +1,5 @@
 //
-//  CATBrowseViewController.swift
+//  CATOpenBrowseViewController.swift
 //  TheCatApp
 //
 //  Created by Frédéric ASTIC on 01/10/2018.
@@ -14,6 +14,8 @@ class CATOpenBrowseViewController : UIViewController {
     
     var loading : Bool = false
     var itemCounter : Int = 0
+    private var hasError : Bool = false
+    private var shouldReload : Bool = true
     
     @IBOutlet weak var browserCollection: CATBrowserView!
     
@@ -25,7 +27,16 @@ class CATOpenBrowseViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        reload()
+        if shouldReload {
+            reload()
+        } else {
+            self.ask(title: "Confirmation", message: "Voulez vous rechargez ?", cancel: "Annuler", approve: "Recharger", approveAction: {
+                self.reload(all: self.images?.count != nil && self.images!.count > 0)
+            }, cancelAction: {
+                self.shouldReload = false
+            })
+        }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -34,6 +45,7 @@ class CATOpenBrowseViewController : UIViewController {
     
     func prepare() {
         browserCollection.setup(dataSource: self, delegate: self, prefetch: self)
+        browserCollection.refrehDelegate = self
     }
     
     
@@ -64,8 +76,10 @@ class CATOpenBrowseViewController : UIViewController {
             DispatchQueue.main.async {
                 self.loading = false
                 if let err = error {
-                    
+                    self.hasError = true
+                    self.message(title: "Error", message: err.localizedDescription, titleAction: "OK")
                 } else if let list =  results {
+                    self.hasError = false
                     if all {
                         self.append(items: list)
                         self.browserCollection.reload()
@@ -85,4 +99,17 @@ class CATOpenBrowseViewController : UIViewController {
         }
     }
 
+}
+
+//MARK : CATBrowserViewProtocol
+extension CATOpenBrowseViewController : CATBrowserRefreshProtocol {
+    func refreshed() {
+        if !loading {
+            itemCounter = 0
+            images?.removeAll()
+            browserCollection.reload()
+            reload()
+        }
+        
+    }
 }
