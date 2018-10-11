@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import FLAnimatedImage
 
 class CATUniqueImageViewController: UIViewController {
 
+    
+    @IBOutlet weak var imateContent: FLAnimatedImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -27,6 +27,11 @@
 		EC71A49B215E272F00182701 /* CATJSONImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71A49A215E272F00182701 /* CATJSONImage.swift */; };
 		EC71A49D215E289100182701 /* CATJSONCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC71A49C215E289100182701 /* CATJSONCategory.swift */; };
 		EC88A3BF2163C74C006C077E /* CATBrowserLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88A3BE2163C74C006C077E /* CATBrowserLayout.swift */; };
+		ECA65CE7216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CE6216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift */; };
+		ECA65CE9216B7AE500F919E3 /* CATImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CE8216B7AE500F919E3 /* CATImageCacheManager.swift */; };
+		ECA65CEF216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CED216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift */; };
+		ECA65CF0216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */; };
+		ECA65CF2216E38E300F919E3 /* Models+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CF1216E38E300F919E3 /* Models+Extensions.swift */; };
 		ECB792F5216365970032625A /* CATUniqueImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB792F4216365970032625A /* CATUniqueImageViewController.swift */; };
 		ECB792F7216398E50032625A /* CATSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB792F6216398E50032625A /* CATSettingsManager.swift */; };
 		ECB792FA21639A190032625A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECB792F921639A190032625A /* Settings.bundle */; };
@@ -43,6 +48,10 @@
 		ECD1C80E2164F873005C2C33 /* CATUserMessageViewController+Instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD1C80D2164F873005C2C33 /* CATUserMessageViewController+Instances.swift */; };
 		ECD1C8122165EE9D005C2C33 /* CATUserMessageViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD1C8112165EE9D005C2C33 /* CATUserMessageViewControllerAnimator.swift */; };
 		ECD1C8142165EFDA005C2C33 /* CAMediaTimingFunction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD1C8132165EFDA005C2C33 /* CAMediaTimingFunction+Extensions.swift */; };
+		ECD1C816216660F1005C2C33 /* CATUniqueImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECD1C815216660F1005C2C33 /* CATUniqueImageViewController.xib */; };
+		ECD1C81A21666438005C2C33 /* CATMyAPIAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD1C81921666438005C2C33 /* CATMyAPIAccountViewController.swift */; };
+		ECD1C81C21666C46005C2C33 /* CATJSONFavourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD1C81B21666C46005C2C33 /* CATJSONFavourite.swift */; };
+		ECD1C82921679F29005C2C33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ECD1C82B21679F29005C2C33 /* Localizable.strings */; };
 		ECF8001A21624180003D09BD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF8001921624180003D09BD /* UIImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,13 +72,18 @@
 		EC31D26421621D1500C71D93 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		EC71A484215E24E700182701 /* TheCatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC71A487215E24E700182701 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC71A48C215E24E700182701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC71A48E215E24E800182701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC71A491215E24E800182701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC71A493215E24E800182701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC71A49A215E272F00182701 /* CATJSONImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATJSONImage.swift; sourceTree = "<group>"; };
 		EC71A49C215E289100182701 /* CATJSONCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATJSONCategory.swift; sourceTree = "<group>"; };
 		EC88A3BE2163C74C006C077E /* CATBrowserLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATBrowserLayout.swift; sourceTree = "<group>"; };
+		ECA65CE6216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATMyAPIAccountViewController+FavoriteCollectionExtension.swift"; sourceTree = "<group>"; };
+		ECA65CE8216B7AE500F919E3 /* CATImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATImageCacheManager.swift; sourceTree = "<group>"; };
+		ECA65CEA216B8A0800F919E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECA65CEB216B8A0800F919E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECA65CED216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATExtendedCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CATExtendedCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECA65CF1216E38E300F919E3 /* Models+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+Extensions.swift"; sourceTree = "<group>"; };
 		ECB792F4216365970032625A /* CATUniqueImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATUniqueImageViewController.swift; sourceTree = "<group>"; };
 		ECB792F6216398E50032625A /* CATSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATSettingsManager.swift; sourceTree = "<group>"; };
 		ECB792F921639A190032625A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -86,6 +100,13 @@
 		ECD1C80D2164F873005C2C33 /* CATUserMessageViewController+Instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATUserMessageViewController+Instances.swift"; sourceTree = "<group>"; };
 		ECD1C8112165EE9D005C2C33 /* CATUserMessageViewControllerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATUserMessageViewControllerAnimator.swift; sourceTree = "<group>"; };
 		ECD1C8132165EFDA005C2C33 /* CAMediaTimingFunction+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+Extensions.swift"; sourceTree = "<group>"; };
+		ECD1C815216660F1005C2C33 /* CATUniqueImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CATUniqueImageViewController.xib; sourceTree = "<group>"; };
+		ECD1C81921666438005C2C33 /* CATMyAPIAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CATMyAPIAccountViewController.swift; path = TheCatApp/Pages/Account/MyAccount/CATMyAPIAccountViewController.swift; sourceTree = SOURCE_ROOT; };
+		ECD1C81B21666C46005C2C33 /* CATJSONFavourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATJSONFavourite.swift; sourceTree = "<group>"; };
+		ECD1C82521679ED4005C2C33 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECD1C82621679ED4005C2C33 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECD1C82A21679F29005C2C33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ECD1C82C21679F30005C2C33 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ECF8001921624180003D09BD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		ED31CC949ADE5BEB8AF76274 /* Pods-TheCatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheCatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheCatApp/Pods-TheCatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +153,7 @@
 		EC31D2472161F91900C71D93 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				ECD1C817216663E2005C2C33 /* Account */,
 				ECB792F32163657A0032625A /* UniqueImage */,
 				EC31D258216207DF00C71D93 /* OpenBrowser */,
 			);
@@ -147,6 +169,7 @@
 				EC31D25B2162081B00C71D93 /* CATDataManager.swift */,
 				EC31D25F21620FE100C71D93 /* CATAppEnv.swift */,
 				ECB792F6216398E50032625A /* CATSettingsManager.swift */,
+				ECA65CE8216B7AE500F919E3 /* CATImageCacheManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -154,6 +177,7 @@
 		EC31D2492161F96D00C71D93 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ECA65CEC216DDAF000F919E3 /* Extended */,
 				EC31D2532161FB0E00C71D93 /* Category */,
 				EC31D24A2161F9FC00C71D93 /* Base */,
 			);
@@ -194,6 +218,7 @@
 				ECB7930F2163BA490032625A /* UIView+Extensions.swift */,
 				ECD1C80B2164F27D005C2C33 /* UIViewController+Extensions.swift */,
 				ECD1C8132165EFDA005C2C33 /* CAMediaTimingFunction+Extensions.swift */,
+				ECA65CF1216E38E300F919E3 /* Models+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,7 +251,6 @@
 				EC71A499215E271600182701 /* Models */,
 				ECB792F8216399F30032625A /* Resources */,
 				EC71A48B215E24E700182701 /* Main.storyboard */,
-				EC71A48E215E24E800182701 /* Assets.xcassets */,
 				EC71A490215E24E800182701 /* LaunchScreen.storyboard */,
 				EC71A493215E24E800182701 /* Info.plist */,
 			);
@@ -238,14 +262,25 @@
 			children = (
 				EC71A49A215E272F00182701 /* CATJSONImage.swift */,
 				EC71A49C215E289100182701 /* CATJSONCategory.swift */,
+				ECD1C81B21666C46005C2C33 /* CATJSONFavourite.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ECA65CEC216DDAF000F919E3 /* Extended */ = {
+			isa = PBXGroup;
+			children = (
+				ECA65CED216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift */,
+				ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */,
+			);
+			path = Extended;
 			sourceTree = "<group>";
 		};
 		ECB792F32163657A0032625A /* UniqueImage */ = {
 			isa = PBXGroup;
 			children = (
 				ECB792F4216365970032625A /* CATUniqueImageViewController.swift */,
+				ECD1C815216660F1005C2C33 /* CATUniqueImageViewController.xib */,
 			);
 			path = UniqueImage;
 			sourceTree = "<group>";
@@ -253,7 +288,9 @@
 		ECB792F8216399F30032625A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EC71A48E215E24E800182701 /* Assets.xcassets */,
 				ECB792F921639A190032625A /* Settings.bundle */,
+				ECD1C82B21679F29005C2C33 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,8 +310,8 @@
 			children = (
 				EC31D2592162080100C71D93 /* CATHTTPClient.swift */,
 				ECB793022163A6840032625A /* CATHTTPClient+OpenAPI.swift */,
-				EC31D25D2162085A00C71D93 /* CATHTTPClientHelperEnums.swift */,
 				ECB793052163AC780032625A /* CATHTTPClient+AccountAPI.swift */,
+				EC31D25D2162085A00C71D93 /* CATHTTPClientHelperEnums.swift */,
 			);
 			path = HTTPClient;
 			sourceTree = "<group>";
@@ -296,6 +333,23 @@
 				ECB7930D2163B9C20032625A /* CATNibableView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		ECD1C817216663E2005C2C33 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				ECD1C818216663F3005C2C33 /* MyAccount */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		ECD1C818216663F3005C2C33 /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				ECD1C81921666438005C2C33 /* CATMyAPIAccountViewController.swift */,
+				ECA65CE6216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift */,
+			);
+			path = MyAccount;
 			sourceTree = "<group>";
 		};
 		ECD4A8C12164A814004B41E4 /* UserMessage */ = {
@@ -352,6 +406,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 				Base,
 			);
 			mainGroup = EC71A47B215E24E700182701;
@@ -373,8 +428,11 @@
 				EC02EDDD2164E675008938F5 /* CATUserMessageViewController.xib in Resources */,
 				EC71A492215E24E800182701 /* LaunchScreen.storyboard in Resources */,
 				EC71A48F215E24E800182701 /* Assets.xcassets in Resources */,
+				ECD1C816216660F1005C2C33 /* CATUniqueImageViewController.xib in Resources */,
+				ECD1C82921679F29005C2C33 /* Localizable.strings in Resources */,
 				ECB792FA21639A190032625A /* Settings.bundle in Resources */,
 				EC31D2522161FAF700C71D93 /* CATBaseCollectionCellCollectionViewCell.xib in Resources */,
+				ECA65CF0216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib in Resources */,
 				EC71A48D215E24E700182701 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +487,7 @@
 			files = (
 				ECB7930E2163B9C20032625A /* CATNibableView.swift in Sources */,
 				EC71A49B215E272F00182701 /* CATJSONImage.swift in Sources */,
+				ECA65CE9216B7AE500F919E3 /* CATImageCacheManager.swift in Sources */,
 				ECD1C80C2164F27D005C2C33 /* UIViewController+Extensions.swift in Sources */,
 				EC31D25E2162085A00C71D93 /* CATHTTPClientHelperEnums.swift in Sources */,
 				EC31D257216207D800C71D93 /* CATOpenBrowseViewController.swift in Sources */,
@@ -445,13 +504,18 @@
 				EC31D26521621D1500C71D93 /* Array+Extensions.swift in Sources */,
 				ECB793122163BA7E0032625A /* CATBrowserView.swift in Sources */,
 				ECD1C80E2164F873005C2C33 /* CATUserMessageViewController+Instances.swift in Sources */,
+				ECA65CE7216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift in Sources */,
 				ECB792F5216365970032625A /* CATUniqueImageViewController.swift in Sources */,
+				ECA65CF2216E38E300F919E3 /* Models+Extensions.swift in Sources */,
 				ECB793032163A6840032625A /* CATHTTPClient+OpenAPI.swift in Sources */,
+				ECA65CEF216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift in Sources */,
 				ECD1C8122165EE9D005C2C33 /* CATUserMessageViewControllerAnimator.swift in Sources */,
 				ECB792FF2163A33D0032625A /* CATDownloadOperation.swift in Sources */,
 				EC31D2512161FAF700C71D93 /* CATBaseCollectionCellCollectionViewCell.swift in Sources */,
 				EC31D262216212F500C71D93 /* CATOpenBrowseViewController+CollectionView.swift in Sources */,
+				ECD1C81A21666438005C2C33 /* CATMyAPIAccountViewController.swift in Sources */,
 				EC88A3BF2163C74C006C077E /* CATBrowserLayout.swift in Sources */,
+				ECD1C81C21666C46005C2C33 /* CATJSONFavourite.swift in Sources */,
 				ECF8001A21624180003D09BD /* UIImage+Extensions.swift in Sources */,
 				EC31D25A2162080100C71D93 /* CATHTTPClient.swift in Sources */,
 				ECB793062163AC780032625A /* CATHTTPClient+AccountAPI.swift in Sources */,
@@ -465,7 +529,8 @@
 		EC71A48B215E24E700182701 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EC71A48C215E24E700182701 /* Base */,
+				ECD1C82621679ED4005C2C33 /* fr */,
+				ECA65CEA216B8A0800F919E3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -473,9 +538,19 @@
 		EC71A490215E24E800182701 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EC71A491215E24E800182701 /* Base */,
+				ECD1C82521679ED4005C2C33 /* fr */,
+				ECA65CEB216B8A0800F919E3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ECD1C82B21679F29005C2C33 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECD1C82A21679F29005C2C33 /* en */,
+				ECD1C82C21679F30005C2C33 /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -485,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -546,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

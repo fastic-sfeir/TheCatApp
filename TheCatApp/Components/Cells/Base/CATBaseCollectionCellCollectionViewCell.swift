@@ -36,16 +36,21 @@ class CATBaseCollectionCellCollectionViewCell: UICollectionViewCell {
         if let obj = self.catImage {
             imageContent.image = nil
             loadingView.isHidden = false
-            CATHTTPClient.image(url: obj.url) { (image, err) in
-                DispatchQueue.main.async {
-                    self.loadingView.isHidden = true
-                    if let animated = image as? FLAnimatedImage {
-                        self.imageContent.animatedImage = animated
-                    } else if let cached = image as? UIImage {
-                        self.imageContent.image = cached
-                    }
-                }
+            
+            imageContent.render(url: obj.url) {
+                self.loadingView.isHidden = true
             }
+            
+//            CATHTTPClient.image(url: obj.url) { (image, err) in
+//                DispatchQueue.main.async {
+//                    self.loadingView.isHidden = true
+//                    if let animated = image as? FLAnimatedImage {
+//                        self.imageContent.animatedImage = animated
+//                    } else if let cached = image as? UIImage {
+//                        self.imageContent.image = cached
+//                    }
+//                }
+//            }
         } else {
             loadingView.isHidden = false
         }

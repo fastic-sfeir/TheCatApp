@@ -56,17 +56,18 @@ class CATUserMessageViewControllerAnimator : NSObject, UIViewControllerAnimatedT
                 return
         }
         let containerView = context.containerView
-        containerView.addSubview(to)
-        containerView.addSubview(from)
-        to.center = containerView.center
-        from.center = containerView.center
+//        containerView.addSubview(from)
+//        from.center = containerView.center
 //
         UIView.animateBy(timing: CAMediaTimingFunction(type: .ExpoOutCustom), duration: duration, animations: {
             from.transform = CGAffineTransform(scaleX: 0, y: 0)
-        }, completion: { _ in
+        }, completion: { finished in
             from.removeFromSuperview()
+            containerView.addSubview(to)
+            to.frame = containerView.bounds
+            to.center = containerView.center
             
-//            context.completeTransition(!context.transitionWasCancelled)
+            context.completeTransition(true)
         })
     }
     

@@ -35,7 +35,7 @@ class CATUserMessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.transitioningDelegate = self
+//        self.transitioningDelegate = self
         // Do any additional setup after loading the view.
         prepare()
     }

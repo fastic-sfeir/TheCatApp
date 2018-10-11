@@ -33,7 +33,8 @@ extension CATDownloadOperation: URLSessionDownloadDelegate {
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         do {
-            let manager = FileManager.default
+            
+//            let manager = FileManager.default
 //            if let destinationURL = LVWDataManager.pathForContent()?.appendingPathComponent(downloadTask.originalRequest!.url!.lastPathComponent), let url = downloadTask.originalRequest?.url {
 //                try? manager.removeItem(at: destinationURL)
 //                try manager.moveItem(at: location, to: destinationURL)

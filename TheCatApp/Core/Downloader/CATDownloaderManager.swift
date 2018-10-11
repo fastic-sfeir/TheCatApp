@@ -7,6 +7,12 @@
 //
 
 import Foundation
+
+@objc protocol CATDownloaderManagerProtocol : class {
+    @objc optional func error(url:String, error:Error)
+    @objc optional func completed()
+}
+
 /// Manager of asynchronous download `Operation` objects
 
 class CATDownloaderManager: NSObject {

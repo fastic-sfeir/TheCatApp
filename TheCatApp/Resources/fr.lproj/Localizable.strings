@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  TheCatApp
+
+  Created by Frédéric ASTIC on 05/10/2018.
+  Copyright © 2018 Fouinasse. All rights reserved.
+*/
+
+common.title.error = "Error";
+
+common.error.message.unknowurl = "";
+common.error.message.malformedurl = "";
+common.error.message.malformedjson = "";
+common.error.message.noaccountinformation = "";
+common.error.message.badaccountinformation = "";
+
+
+page.myapiaccount.createaccount = "Create an account from the Cat API to access your favorite kittens. It's free.";
+page.myapiaccount.badaccount = "API Informations provided are incorrect. Try to update your API Key in Settings and retry.";

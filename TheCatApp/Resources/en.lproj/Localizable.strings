@@ -1,0 +1,20 @@
+/* 
+  texts.strings
+  TheCatApp
+
+  Created by Frédéric ASTIC on 05/10/2018.
+  Copyright © 2018 Fouinasse. All rights reserved.
+*/
+
+common.title.error = "Error";
+
+common.error.message.unknowurl = "URL can't be reached";
+common.error.message.malformedurl = "URL is malformed";
+common.error.message.malformedjson = "JSON can't be parsed";
+common.error.message.noaccountinformation = "There is no connection information in your settings";
+common.error.message.badaccountinformation = "API Informations provided are incorrect. Try to update your API Key in Settings and retry.";
+
+
+page.myapiaccount.createaccount = "Create an account from the Cat API to access your favorite kittens. It's free.";
+page.myapiaccount.myfav = "My favorites";
+

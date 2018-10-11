@@ -36,7 +36,7 @@ class CATOpenBrowseViewController : UIViewController {
                 self.shouldReload = false
             })
         }
-        
+        self.message(title: "coucou", message: "test", titleAction: "OK")
     }
     
     override func viewDidDisappear(_ animated: Bool) {

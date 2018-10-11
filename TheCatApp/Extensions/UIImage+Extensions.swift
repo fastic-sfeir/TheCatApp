@@ -8,16 +8,22 @@
 
 import Foundation
 import UIKit
+import FLAnimatedImage
 
-enum UIImageType {
-    case normal
-    case animated
-}
-
-extension UIImage {
-    func type() -> UIImageType {
-        
-        
-        return .normal
+extension FLAnimatedImageView {
+    func render(url:String, completion:(() -> ())? = nil) {
+        CATHTTPClient.image(url: url) { (image, err) in
+            
+            if let animated = image as? FLAnimatedImage {
+                self.animatedImage = animated
+            } else if let normal = image as? UIImage {
+                self.image = normal
+            } else {
+                self.image = nil
+            }
+            completion?()
+        }
     }
 }
+
+

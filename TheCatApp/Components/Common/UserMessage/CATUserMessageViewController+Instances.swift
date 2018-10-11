@@ -14,7 +14,7 @@ extension CATUserMessageViewController {
         instance.userMessage = message
         instance.validTitle = validTitle
         instance.modalPresentationStyle = .overCurrentContext
-        instance.transitioningDelegate = instance
+//        instance.transitioningDelegate = instance
         return instance
     }
     
@@ -27,7 +27,7 @@ extension CATUserMessageViewController {
         instance.cancelAction = cancelAction
         instance.approveAction = approveAction
         instance.modalPresentationStyle = .overCurrentContext
-        instance.transitioningDelegate = instance
+//        instance.transitioningDelegate = instance
         return instance
     }
 }

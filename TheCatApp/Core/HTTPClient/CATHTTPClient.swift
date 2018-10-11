@@ -12,15 +12,18 @@ import FLAnimatedImage
 
 class CATHTTPClient : NSObject {
     
-    static let HTTP_HEADER_X_AUTH_TOKEN : String = ""
+    static let HTTP_HEADER_X_AUTH_TOKEN : String = "x-api-key"
     static let HTTP_HEADER_CONTENT_TYPE : String = "Content-Type"
+    static let HTTP_HEADER_CONTENT_TYPE_VALUE_JSON : String = "application/json; charset=UTF-8"
     
     static let HTTP_DEFAULT_LIMIT : Int32 = 10
+    static let HTTP_URL_REGISTER : String = "https://thecatapi.com/signup"
     static let HTTP_BASE_SCHEME : String = "https"
     static let HTTP_BASE_HOST : String = "api.thecatapi.com"
     static let HTTP_BASE_API_VERSION : String = "/v1/"
     static let HTTP_ROUTE_BASE_IMAGE : String = "images/"
     static let HTTP_ROUTE_BROWSE : String = "search/"
+    static let HTTP_ROUTE_FAVORITE : String = "favourites/"
     
     static let QUERY_PARAM_LIMIT = "limit"
     static let QUERY_PARAM_MIMETYPE = "mime_types"
@@ -31,6 +34,10 @@ class CATHTTPClient : NSObject {
     static let POST_PARAM_SUB_ID = "sub_id"
     static let POST_PARAM_REMOTE_URL = "remote_url"
     
+    var apiKey : String = ""
+    var accountId : String = ""
+    
+    //MARK: Static func
     static func parameters(limit:Int32, types:[CATHTTPClientOptionMimeType]? = nil) -> [String : Any] {
         var p : [String : Any] = [QUERY_PARAM_LIMIT : limit]
         if let t = types {
@@ -60,6 +67,8 @@ class CATHTTPClient : NSObject {
         }
         return nil
     }
+    
+    
     
     
 }
