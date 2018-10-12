@@ -20,11 +20,11 @@ extension CATMyAPIAccountViewController : UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CATExtendedCollectionViewCell.reuseIdentifier, for: indexPath) as! CATExtendedCollectionViewCell
         let favorite = manager.favorites()[indexPath.row]
-        if let cached = manager.cache.object(forId: favorite.image_id) {
-            cell.configure(fromCache: cached)
-        } else {
-            cell.configure(image: CATJSONImage(imageId: favorite.image_id, imageUrl: <#T##String#>))
-        }
+//        if let cached = manager.cache.object(forId: favorite.image_id) {
+//            cell.configure(fromCache: cached)
+//        } else {
+//            cell.configure(image: CATJSONImage(imageId: favorite.image_id, imageUrl: <#T##String#>))
+//        }
         return cell
     }
 }

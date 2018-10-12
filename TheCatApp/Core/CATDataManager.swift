@@ -10,6 +10,14 @@ import Foundation
 import Alamofire
 import FLAnimatedImage
 
+protocol CATDataManagerProtocol : class {
+    func onSuccessfullAccount()
+    func favouritesUpdated()
+    func votesUpdated()
+}
+
+
+
 class CATDataManager {
     static let shared : CATDataManager = CATDataManager()
     
@@ -17,7 +25,7 @@ class CATDataManager {
     let httpClient = CATHTTPClient()
     let settings = CATSettingsManager()
     let cache = CATImageCacheManager()
-    
+    weak var delegate : CATDataManagerProtocol? = nil
     private var favoritesArray : [CATJSONFavourite] = [CATJSONFavourite]()
     private var votesArray : [Any]? = nil
     
@@ -34,11 +42,19 @@ class CATDataManager {
     }
     
     
-    func favorite(imageId:String) -> CATJSONFavourite? {
-        return favoritesArray.filter({ (item) -> Bool in
-            return item.image_id == imageId
-        }).first
+    func load(completion:@escaping (() -> ()?)) {
+        httpClient.favorites { (favorites, err) in
+            if let list = favorites {
+                self.append(favorites: list)
+            }
+            if err == nil {
+                self.setApiAccount(haveIt: true)
+                self.delegate?.onSuccessfullAccount()
+            }
+            completion()
+        }
     }
+    
     
     func setApiAccount(haveIt:Bool = true) {
         haveAPIAccount = haveIt
@@ -51,10 +67,19 @@ class CATDataManager {
         return favoritesArray
     }
     
+    
+    func favorite(imageId:String) -> CATJSONFavourite? {
+        return favoritesArray.filter({ (item) -> Bool in
+            return item.image_id == imageId
+        }).first
+    }
+    
+    
     func fav(imageId:String, imageUrl:String, imageData:Data, completion:@escaping ((Error?) -> ())) {
         httpClient.fav(imageId: imageId) { (err) in
             if err == nil {
                 self.cache.push(imageId: imageId, imageUrl: imageUrl, imageContent: imageData)
+                self.delegate?.favouritesUpdated()
             }
             completion(err)
         }
@@ -64,6 +89,7 @@ class CATDataManager {
         httpClient.unfav(imageId: imageId) { (err) in
             if err == nil {
                 self.cache.remove(imageId: imageId)
+                self.delegate?.favouritesUpdated()
             }
             completion(err)
         }

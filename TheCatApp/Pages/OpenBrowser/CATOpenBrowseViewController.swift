@@ -17,6 +17,8 @@ class CATOpenBrowseViewController : UIViewController {
     private var hasError : Bool = false
     private var shouldReload : Bool = true
     
+    var useExtendedCell : Bool = false
+    
     @IBOutlet weak var browserCollection: CATBrowserView!
     
     override func viewDidLoad() {
@@ -36,7 +38,6 @@ class CATOpenBrowseViewController : UIViewController {
                 self.shouldReload = false
             })
         }
-        self.message(title: "coucou", message: "test", titleAction: "OK")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,7 +45,7 @@ class CATOpenBrowseViewController : UIViewController {
     }
     
     func prepare() {
-        browserCollection.setup(dataSource: self, delegate: self, prefetch: self)
+        browserCollection.setup(dataSource: self, delegate: self, prefetch: self, useExtended: useExtendedCell)
         browserCollection.refrehDelegate = self
     }
     
@@ -111,5 +112,14 @@ extension CATOpenBrowseViewController : CATBrowserRefreshProtocol {
             reload()
         }
         
+    }
+}
+
+extension CATOpenBrowseViewController : CATReloadControllerProtocol {
+    func reloadController() {
+        images = [CATJSONImage]()
+        useExtendedCell = CATDataManager.shared.haveAccount()
+        browserCollection.setup(dataSource: self, delegate: self, prefetch: self, useExtended: useExtendedCell)
+        reload(all: true)
     }
 }

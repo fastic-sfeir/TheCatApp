@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1236" y="-616.64167916041981"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="FZM-eR-oMu">
             <objects>
-                <tabBarController id="CR6-5Z-S6j" sceneMemberID="viewController">
+                <tabBarController id="CR6-5Z-S6j" customClass="CATMainTabBarController" customModule="TheCatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AbL-Ue-pbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

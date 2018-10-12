@@ -27,10 +27,6 @@ class CATMyAPIAccountViewController : UIViewController {
     let settings : CATSettingsManager = CATDataManager.shared.settings
     let http : CATHTTPClient = CATDataManager.shared.httpClient
     
-    
-    private var apiKey : String? = nil
-    private var accountId : String? = nil
-    
     private enum ViewStateEnum {
         case createAccount
         case loading
@@ -66,28 +62,21 @@ class CATMyAPIAccountViewController : UIViewController {
     
     //MARK: private
     private func prepare() {
-        apiKey = settings.string(key: .apiKey)
-        accountId = settings.string(key: .apiUserId)
-        if let key = apiKey, let account = accountId {
-            http.set(apiKey: key, accountId: account)
-            viewState = .loading
-            http.favorites { (favorites, error) in
-                DispatchQueue.main.async {
-                    if let err = error {
-                        self.viewState = .createAccount
-                        self.message(title: NSLocalizedString("common.title.error", comment: "common.title.error"), message: err.localizedDescription, titleAction: "OK")
-                    } else {
-                        self.viewState = .myAccount
-                        self.manager.setApiAccount()
-                        if let list = favorites {
-                            self.manager.append(favorites: list)
-                            self.reload()
-                        }
+        viewState = .loading
+        http.favorites { (favorites, error) in
+            DispatchQueue.main.async {
+                if let err = error {
+                    self.viewState = .createAccount
+                    self.message(title: NSLocalizedString("common.title.error", comment: "common.title.error"), message: err.localizedDescription, titleAction: "OK")
+                } else {
+                    self.viewState = .myAccount
+                    self.manager.setApiAccount()
+                    if let list = favorites {
+                        self.manager.append(favorites: list)
+                        self.reload()
                     }
                 }
             }
-        } else {
-            viewState = .createAccount
         }
     }
     

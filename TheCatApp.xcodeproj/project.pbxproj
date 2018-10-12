@@ -32,6 +32,7 @@
 		ECA65CEF216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CED216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift */; };
 		ECA65CF0216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */; };
 		ECA65CF2216E38E300F919E3 /* Models+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CF1216E38E300F919E3 /* Models+Extensions.swift */; };
+		ECA65CF52170858C00F919E3 /* CATMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA65CF42170858C00F919E3 /* CATMainTabBarController.swift */; };
 		ECB792F5216365970032625A /* CATUniqueImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB792F4216365970032625A /* CATUniqueImageViewController.swift */; };
 		ECB792F7216398E50032625A /* CATSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB792F6216398E50032625A /* CATSettingsManager.swift */; };
 		ECB792FA21639A190032625A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECB792F921639A190032625A /* Settings.bundle */; };
@@ -84,6 +85,7 @@
 		ECA65CED216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATExtendedCollectionViewCell.swift; sourceTree = "<group>"; };
 		ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CATExtendedCollectionViewCell.xib; sourceTree = "<group>"; };
 		ECA65CF1216E38E300F919E3 /* Models+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models+Extensions.swift"; sourceTree = "<group>"; };
+		ECA65CF42170858C00F919E3 /* CATMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATMainTabBarController.swift; sourceTree = "<group>"; };
 		ECB792F4216365970032625A /* CATUniqueImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATUniqueImageViewController.swift; sourceTree = "<group>"; };
 		ECB792F6216398E50032625A /* CATSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CATSettingsManager.swift; sourceTree = "<group>"; };
 		ECB792F921639A190032625A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		EC31D2472161F91900C71D93 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				ECA65CF3217084CF00F919E3 /* TabBar */,
 				ECD1C817216663E2005C2C33 /* Account */,
 				ECB792F32163657A0032625A /* UniqueImage */,
 				EC31D258216207DF00C71D93 /* OpenBrowser */,
@@ -274,6 +277,14 @@
 				ECA65CEE216DDB3300F919E3 /* CATExtendedCollectionViewCell.xib */,
 			);
 			path = Extended;
+			sourceTree = "<group>";
+		};
+		ECA65CF3217084CF00F919E3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ECA65CF42170858C00F919E3 /* CATMainTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		ECB792F32163657A0032625A /* UniqueImage */ = {
@@ -506,6 +517,7 @@
 				ECD1C80E2164F873005C2C33 /* CATUserMessageViewController+Instances.swift in Sources */,
 				ECA65CE7216B5EB900F919E3 /* CATMyAPIAccountViewController+FavoriteCollectionExtension.swift in Sources */,
 				ECB792F5216365970032625A /* CATUniqueImageViewController.swift in Sources */,
+				ECA65CF52170858C00F919E3 /* CATMainTabBarController.swift in Sources */,
 				ECA65CF2216E38E300F919E3 /* Models+Extensions.swift in Sources */,
 				ECB793032163A6840032625A /* CATHTTPClient+OpenAPI.swift in Sources */,
 				ECA65CEF216DDB3300F919E3 /* CATExtendedCollectionViewCell.swift in Sources */,

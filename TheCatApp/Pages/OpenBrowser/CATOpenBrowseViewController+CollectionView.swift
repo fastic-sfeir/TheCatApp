@@ -23,11 +23,17 @@ extension CATOpenBrowseViewController : UICollectionViewDataSource, UICollection
         return itemCounter
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CATBaseCollectionCellCollectionViewCell.reuseIdentifier, for: indexPath) as! CATBaseCollectionCellCollectionViewCell
-        
-        cell.configure(image: images?[indexPath.row])
-        
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: browserCollection.cellIdentifier, for: indexPath)
+        let obj = images?[indexPath.row]
+        if useExtendedCell {
+            let extended = cell as! CATExtendedCollectionViewCell
+            extended.configure(image: obj)
+            return extended
+        } else {
+            let basic = cell as! CATBaseCollectionCellCollectionViewCell
+            basic.configure(image: obj)
+            return basic
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

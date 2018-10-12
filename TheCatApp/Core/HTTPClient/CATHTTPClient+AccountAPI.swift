@@ -34,14 +34,19 @@ extension CATHTTPClient {
             Alamofire
                 .request(request)
                 .responseJSON { (response) in
+                    
                     if let resp = response.response, resp.statusCode == 401 {
                         completion(nil, CATHTTPErrorHelper.badAccountInformation())
                     } else {
                         if let data = response.data, let objects = try? JSONDecoder().decode(Array<CATJSONFavourite>.self, from: data) {
                             completion(objects, nil)
                         } else {
-                            //TODO: do something with no readable data - Create error
-                            completion(nil, CATHTTPErrorHelper.malformedJSONError())
+                            if let resp = response.response, resp.statusCode == 200 {
+                                completion(nil, nil)
+                            } else {
+                                completion(nil, CATHTTPErrorHelper.malformedJSONError())
+                            }
+                            
                         }
                     }
                 }

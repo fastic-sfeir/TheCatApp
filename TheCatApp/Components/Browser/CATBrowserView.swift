@@ -17,7 +17,9 @@ class CATBrowserView: CATNibableView {
     let refreshControl = UIRefreshControl()
     weak var refrehDelegate : CATBrowserRefreshProtocol?
     @IBOutlet weak var imagesCollection: UICollectionView!
-    
+
+    var useExtendedCell : Bool = false
+    var cellIdentifier : String = CATBaseCollectionCellCollectionViewCell.reuseIdentifier
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,14 +36,16 @@ class CATBrowserView: CATNibableView {
     private func customInit() {
         refreshControl.addTarget(self, action: #selector(onPullRefreshed(sender:)), for: .valueChanged)
         imagesCollection.refreshControl = refreshControl
-        imagesCollection.register(UINib(nibName: CATBaseCollectionCellCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: CATBaseCollectionCellCollectionViewCell.reuseIdentifier)
-        
     }
     
-    func setup(dataSource:UICollectionViewDataSource, delegate:UICollectionViewDelegate, prefetch:UICollectionViewDataSourcePrefetching) {
+    func setup(dataSource:UICollectionViewDataSource, delegate:UICollectionViewDelegate, prefetch:UICollectionViewDataSourcePrefetching, useExtended: Bool = false) {
         imagesCollection.dataSource = dataSource
         imagesCollection.delegate = delegate
         imagesCollection.prefetchDataSource = prefetch
+        useExtendedCell = useExtended
+        let nib = UINib(nibName: useExtendedCell ? CATExtendedCollectionViewCell.nibName : CATBaseCollectionCellCollectionViewCell.nibName, bundle: nil)
+        cellIdentifier = useExtendedCell ? CATExtendedCollectionViewCell.reuseIdentifier : CATBaseCollectionCellCollectionViewCell.reuseIdentifier
+        imagesCollection.register(nib, forCellWithReuseIdentifier: cellIdentifier)
         reload()
     }
     

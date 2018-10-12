@@ -28,7 +28,7 @@ extension CATHTTPClient {
                             completion(nil, CATHTTPErrorHelper.malformedJSONError())
                         }
                     }
-            }
+                }
         } else {
             completion(nil, CATHTTPErrorHelper.malformedURLError())
         }
@@ -48,6 +48,27 @@ extension CATHTTPClient {
                     } else {
                         let err = resp.error ?? CATHTTPErrorHelper.undownloadableURL()
                         completion(nil, err)
+                    }
+                }
+        } else {
+            completion(nil, CATHTTPErrorHelper.malformedURLError())
+        }
+    }
+    
+    static func image(byId:String, completion:@escaping ((Any?, Error?) -> ())) {
+        let route =  String(format:"%@%@/%@", HTTP_BASE_API_VERSION, HTTP_ROUTE_BASE_IMAGE, byId)
+        if let url = urlBuilder(route: route, parameters: nil) {
+            Alamofire
+                .request(url)
+                .responseJSON { (resp) in
+                    if let json = resp.data,  let image = try? JSONDecoder().decode(CATJSONImage.self, from: json) {
+                        CATHTTPClient.image(url: image.url, completion: completion)
+                    } else {
+                        if let err = resp.error {
+                            completion(nil, err)
+                        } else {
+                            completion(nil, CATHTTPErrorHelper.malformedJSONError())
+                        }
                     }
                 }
         } else {
